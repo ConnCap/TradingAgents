@@ -1,6 +1,4 @@
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-import time
-import json
 
 
 def create_market_analyst(llm, toolkit):
@@ -8,7 +6,7 @@ def create_market_analyst(llm, toolkit):
     def market_analyst_node(state):
         current_date = state["trade_date"]
         ticker = state["company_of_interest"]
-        company_name = state["company_of_interest"]
+        state["company_of_interest"]
 
         if toolkit.config["online_tools"]:
             tools = [

@@ -1,4 +1,3 @@
-from typing import Optional
 import datetime
 import typer
 from pathlib import Path
@@ -14,15 +13,11 @@ from rich.text import Text
 from rich.live import Live
 from rich.table import Table
 from collections import deque
-import time
-from rich.tree import Tree
 from rich import box
 from rich.align import Align
-from rich.rule import Rule
 
 from tradingagents.graph.trading_graph import TradingAgentsGraph
 from tradingagents.default_config import DEFAULT_CONFIG
-from cli.models import AnalystType
 from cli.utils import *
 
 console = Console()
@@ -1075,7 +1070,7 @@ def run_analysis():
 
         # Get final state and decision
         final_state = trace[-1]
-        decision = graph.process_signal(final_state["final_trade_decision"])
+        graph.process_signal(final_state["final_trade_decision"])
 
         # Update all agent statuses to completed
         for agent in message_buffer.agent_status:
