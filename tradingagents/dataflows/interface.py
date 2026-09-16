@@ -11,7 +11,7 @@ import pandas as pd
 from tqdm import tqdm
 import yfinance as yf
 from openai import OpenAI
-from .config import get_config, DATA_DIR
+from .config import get_config, set_config, DATA_DIR  # noqa: F401 - re-exported
 
 
 def get_finnhub_news(
